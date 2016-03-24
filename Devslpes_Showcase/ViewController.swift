@@ -14,18 +14,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+            self.performSegueWithIdentifier(Segue_LOGGED_IN, sender: nil)
+        }
     }
     
     @IBAction func fbButtonPressed(sender: UIButton!) {
         let facebookLogin = FBSDKLoginManager()
         
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: nil) { (facebookResult: FBSDKLoginManagerLoginResult!, facebookError: NSError!) in
-            if facebookError != nil {
-                print("FAcebook login failed. Error \(facebookError)")
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (facebookResult: FBSDKLoginManagerLoginResult!, facebookError: NSError!) in
+            if facebookError != nil || facebookResult.token == nil {
+                print("Facebook login failed. Error \(facebookError)")
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print("successfully logged in with Facebook. \(accessToken)")
+                print("successfully logged in with Facebook! \(accessToken)")
                 
                 DataService.ds.refBase.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (error, authData) in
                     if error != nil {
@@ -33,7 +41,7 @@ class ViewController: UIViewController {
                     } else {
                         print("Logged in! \(authData)")
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                        self.performSegueWithIdentifier("loggedIn", sender: nil)
+                        self.performSegueWithIdentifier(Segue_LOGGED_IN, sender: nil)
                     }
                 })
             }
