@@ -11,6 +11,7 @@
 		BC95E7D01CA3519500836575 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95E7CD1CA3519500836575 /* Bolts.framework */; };
 		BC95E7D11CA3519500836575 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95E7CE1CA3519500836575 /* FBSDKCoreKit.framework */; };
 		BC95E7D21CA3519500836575 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC95E7CF1CA3519500836575 /* FBSDKLoginKit.framework */; };
+		BC95E7D51CA382BC00836575 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95E7D41CA382BC00836575 /* DataService.swift */; };
 		BCB914EA1C9282C2005C42E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB914E91C9282C2005C42E8 /* AppDelegate.swift */; };
 		BCB914EC1C9282C2005C42E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB914EB1C9282C2005C42E8 /* ViewController.swift */; };
 		BCB914EF1C9282C2005C42E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB914ED1C9282C2005C42E8 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		BC95E7CD1CA3519500836575 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		BC95E7CE1CA3519500836575 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		BC95E7CF1CA3519500836575 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		BC95E7D41CA382BC00836575 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BCB914E61C9282C1005C42E8 /* Devslpes_Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devslpes_Showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB914E91C9282C2005C42E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB914EB1C9282C2005C42E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC95E7D31CA382AA00836575 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BC95E7D41CA382BC00836575 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		BCB914DD1C9282C1005C42E8 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 		BCB914E81C9282C2005C42E8 /* Devslpes_Showcase */ = {
 			isa = PBXGroup;
 			children = (
+				BC95E7D31CA382AA00836575 /* Services */,
 				BC95E7CC1CA3518600836575 /* Frameworks */,
 				BCB915091C928699005C42E8 /* Util */,
 				BCB914FD1C9282F0005C42E8 /* Model */,
@@ -300,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCB9150F1C928E74005C42E8 /* MaterialTextField.swift in Sources */,
+				BC95E7D51CA382BC00836575 /* DataService.swift in Sources */,
 				BCB915081C92866C005C42E8 /* MaterialView.swift in Sources */,
 				BCB914EC1C9282C2005C42E8 /* ViewController.swift in Sources */,
 				BCB914EA1C9282C2005C42E8 /* AppDelegate.swift in Sources */,
