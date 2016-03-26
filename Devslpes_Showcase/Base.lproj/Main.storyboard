@@ -132,7 +132,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9s-OZ-oK6" customClass="MaterialButton" customModule="Devslpes_Showcase" customModuleProvider="target">
                                         <rect key="frame" x="182" y="192" width="196" height="36"/>
@@ -151,6 +151,9 @@
                                                 <exclude reference="JEX-Ti-nhQ"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIq-zD-B4L"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,6 +200,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="Al3-Q6-GMs" id="Bpm-u3-vqW"/>
+                        <outlet property="passwordField" destination="Ljh-8f-mCe" id="E06-VB-cLE"/>
                         <segue destination="EJh-Rh-5Fn" kind="show" identifier="loggedIn" id="u9p-nx-94O"/>
                     </connections>
                 </viewController>
